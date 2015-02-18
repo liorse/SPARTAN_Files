@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<head>
+	<title>New Stuff</title>
+	
+	<script type="text/javascript">
+	(function(){function i(){Array.forEach(document.querySelectorAll("input[type=range]"),l);document.addEventListener("DOMNodeInserted",j,true)}function j(a){k(a.target);if(a.target.querySelectorAll)Array.forEach(a.target.querySelectorAll("input"),k)}function k(a,b){if(a.localName!="input"||a.type=="range");else if(a.getAttribute("type")=="range")l(a);else if(!b)setTimeout(k,0,a,true)}function l(a){function w(a){k=true;setTimeout(function(){k=false},0);if(a.button||!s)return;var b=parseFloat(getComputedStyle(this,0).width);var c=(b-e.width)/s;if(!c)return;var d=a.clientX-this.getBoundingClientRect().left-e.width/2-(t-p)*c;if(Math.abs(d)>e.radius){j=true;this.value-=-d/c}n=t;o=a.clientX;this.addEventListener("mousemove",x,true);this.addEventListener("mouseup",y,true)}function x(a){var b=parseFloat(getComputedStyle(this,0).width);var c=(b-e.width)/s;if(!c)return;n+=(a.clientX-o)/c;o=a.clientX;j=true;this.value=n}function y(){this.removeEventListener("mousemove",x,true);this.removeEventListener("mouseup",y,true)}function z(a){if(a.keyCode>36&&a.keyCode<41){A.call(this);j=true;this.value=t+(a.keyCode==38||a.keyCode==39?r:-r)}}function A(){if(!k)this.style.boxShadow=!d?"0 0 0 2px #fb0":"0 0 2px 1px -moz-mac-focusring, inset 0 0 1px -moz-mac-focusring"}function B(){this.style.boxShadow=""}function C(a){return!isNaN(a)&&+a==parseFloat(a)}function D(){p=C(a.min)?+a.min:0;q=C(a.max)?+a.max:100;if(q<p)q=p>100?p:100;r=C(a.step)&&a.step>0?+a.step:1;s=q-p;F(true)}function E(){if(!b&&!i)t=a.getAttribute("value");if(!C(t))t=(p+q)/2;t=Math.round((t-p)/r)*r+p;if(t<p)t=p;else if(t>q)t=p+~~(s/r)*r}function F(b){E();if(j&&t!=l)a.dispatchEvent(h);j=false;if(!b&&t==l)return;l=t;var c=s?(t-p)/s*100:0;var d="-moz-element(#__sliderthumb__) "+c+"% no-repeat, ";m(a,{background:d+f})}var b,i,j,k,l,n,o;var p,q,r,s,t=a.value;if(!c){c=document.body.appendChild(document.createElement("hr"));m(c,{"-moz-appearance":d?"scale-horizontal":"scalethumb-horizontal",display:"block",visibility:"visible",opacity:1,position:"fixed",top:"-999999px"});document.mozSetImageElement("__sliderthumb__",c)}var u=function(){return""+t};var v=function G(c){t=""+c;b=true;F();delete a.value;a.value=t;a.__defineGetter__("value",u);a.__defineSetter__("value",G)};a.__defineGetter__("value",u);a.__defineSetter__("value",v);a.__defineGetter__("type",function(){return"range"});["min","max","step"].forEach(function(b){if(a.hasAttribute(b))i=true;a.__defineGetter__(b,function(){return this.hasAttribute(b)?this.getAttribute(b):""});a.__defineSetter__(b,function(a){a===null?this.removeAttribute(b):this.setAttribute(b,a)})});a.readOnly=true;m(a,g);D();a.addEventListener("DOMAttrModified",function(a){if(a.attrName=="value"&&!b){t=a.newValue;F()}else if(~["min","max","step"].indexOf(a.attrName)){D();i=true}},true);a.addEventListener("mousedown",w,true);a.addEventListener("keydown",z,true);a.addEventListener("focus",A,true);a.addEventListener("blur",B,true)}function m(a,b){for(var c in b)a.style.setProperty(c,b[c],"important")}var a=document.createElement("input");try{a.type="range";if(a.type=="range")return}catch(b){return}if(!document.mozSetImageElement||!("MozAppearance"in a.style))return;var c;var d=navigator.platform=="MacIntel";var e={radius:d?9:6,width:d?22:12,height:d?16:20};var f="-moz-linear-gradient(top, transparent "+(d?"6px, #999 6px, #999 7px, #ccc 9px, #bbb 11px, #bbb 12px, transparent 12px":"9px, #999 9px, #bbb 10px, #fff 11px, transparent 11px")+", transparent)";var g={"min-width":e.width+"px","min-height":e.height+"px","max-height":e.height+"px",padding:0,border:0,"border-radius":0,cursor:"default","text-indent":"-999999px"};var h=document.createEvent("HTMLEvents");h.initEvent("change",true,false);if(document.readyState=="loading")document.addEventListener("DOMContentLoaded",i,true);else i()})()
+	</script>
+	<script type="text/javascript" src="Converter_script_IN1002.js"></script>
+	
+	<style>
+		html, body, input
+		{
+			font-family: Verdana, sans-serif;
+			font-size: 9pt;
+		}
+		
+		input[type="button"]
+		{
+			width: 150px;
+			margin: 4px;
+			padding: 5px;
+			border: 1px solid rgb(150, 150, 150);
+			border-radius: 2px;
+				-webkit-border-radius: 2px
+				-moz-border-radius: 2px;
+			background: rgb(240, 240, 230);
+		}
+		
+		input[type="button"]:enabled
+		{
+			transition: all 100ms linear;
+				-webkit-transition: all 100ms linear;
+				-moz-transition: all 100ms linear;
+				-ms-transition: all 100ms linear;
+				-o-transition: all 100ms linear;
+		}
+		
+		input[type="button"]:enabled:hover
+		{
+			border: 1px solid rgb(100, 100, 100);
+			background: rgb(215, 220, 200);
+		}
+		
+		input[type="text"]
+		{
+			width: 75px;
+			margin: 2px;
+			padding: 5px;
+			border: 1px solid rgb(150, 150, 150);
+			text-align: center;
+			box-shadow: inset 1px 1px 2px 0px #cecece;
+		}
+		
+		input[type="text"]:focus
+		{
+			outline: none;
+		}
+		
+		#button_div input
+		{
+			display: block;
+			margin: 10px;
+		}
+		
+		#time_slider
+		{
+			display: block;
+			margin: 0 auto;
+		}
+		
+		#outer_box
+		{
+			display: -moz-box;
+				-moz-box-orient: horizontal;
+				-moz-box-pack: justify;
+				-moz-box-align: start;
+			display: -webkit-box;
+				-webkit-box-orient: horizontal;
+				-webkit-box-pack: justify;
+				-webkit-box-align: start;
+			margin: 0px 20px;
+		}
+		
+		#canvas_div .canvas
+		{
+			display: block;
+			margin-top: 10px;
+		}
+		
+		#canvas_div .master_line
+		{
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		
+		#calibration_gases_box
+		{
+			display: -moz-box;
+				-moz-box-orient: horizontal;
+				-moz-box-pack: justify;
+				-moz-box-align: start;
+			display: -webkit-box;
+				-webkit-box-orient: horizontal;
+				-webkit-box-pack: justify;
+				-webkit-box-align: start;
+		}
+		
+		#gas_marker_info
+		{
+			display: -moz-box;
+				-moz-box-orient: horizontal;
+				-moz-box-pack: justify;
+				-moz-box-align: start;
+			display: -webkit-box;
+				-webkit-box-orient: horizontal;
+				-webkit-box-pack: justify;
+				-webkit-box-align: center;
+		}
+		
+		#gas_marker_info input
+		{
+			display: block;
+		}
+		
+		#calibration_gases_box input
+		{
+			display: inline;
+		}
+		
+		#calibration_info
+		{
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="outer_box">
+		<div id="canvas_div">
+			<div style="position: relative;">
+				<canvas id="plot_1" class="canvas"></canvas>
+				<canvas id="line_1" class="master_line"></canvas>
+			</div>
+			<div style="position: relative;">
+				<canvas id="plot_2" class="canvas"></canvas>
+				<canvas id="line_2" class="master_line"></canvas>
+			</div>
+			<div style="position: relative;">
+				<canvas id="plot_3" class="canvas"></canvas>
+				<canvas id="line_3" class="master_line"></canvas>
+			</div>
+		</div>
+		
+		<div id="right_box">
+			<div id="button_div">
+				 
+				<input id="config_upload" type="button" value="" onchange="" disabled />
+				  Data File: 
+				<input id="data_upload" type="file" value="Load Data File" onchange="load_data_file()" />
+				<input id="calibrate_button" type="button" value="" onclick="" disabled />
+				<input id="export_button" type="button" value="Save Calibrated Data" onclick="save_data()" />
+			</div>
+			
+			<div id="load_log"></div>
+			
+			<div id="calibration_info">
+				<div style="margin: 40px 0px;">
+					<input id="time_slider" type="range" min="0" max="0" step="1" value="0" onchange="change_master_line()" onmouseup="" />
+					<br />
+					Censor line = <input id="calib_master_line" type="text" onchange="set_master_line()" />
+				</div>
+				
+				<div id="gas_marker_info">
+					<div>
+						<input type="button" value="Begin Gas 1" onclick="save(1, 'start')" />
+						<input type="button" value="End Gas 1" onclick="save(1, 'end')" />
+						<br />
+						<input type="button" value="Begin Gas 2" onclick="save(2, 'start')" />
+						<input type="button" value="End Gas 2" onclick="save(2, 'end')" />
+					</div>
+					
+					<div>
+						<input id="gas_1_start" type="text" disabled />
+						<input id="gas_1_end" type="text" disabled />
+						<br />
+						<input id="gas_2_start" type="text" disabled />
+						<input id="gas_2_end" type="text" disabled />
+					</div>
+				</div>
+				
+				<h3 style="text-align: center;">Calibration Gases</h3>
+				
+				<div id="calibration_gases_box">
+					<div>
+						<h4 style="text-align: center;">Gas 1</h4>
+						<input type="radio" name="gas_1" value="clean_air" />Clean Air<br />
+						<input type="radio" name="gas_1" value="n2" />N2<br />
+						<input type="radio" name="gas_1" value="co2" />CO2<br />
+						<input type="radio" name="gas_1" value="sf6" />SF6<br />
+						<input type="radio" name="gas_1" value="custom" />Custom
+					</div>
+					
+					<div>
+						<h4 style="text-align: center;">Gas 2</h4>
+						<input type="radio" name="gas_2" value="clean_air" />Clean Air<br />
+						<input type="radio" name="gas_2" value="n2" />N2<br />
+						<input type="radio" name="gas_2" value="co2" />CO2<br />
+						<input type="radio" name="gas_2" value="sf6" />SF6<br />
+						<input type="radio" name="gas_2" value="custom" />Custom
+					</div>
+				</div>
+				
+				<div style="margin-top: 30px;">
+					<input type="button" value="Perform Calibration" onclick="perform_calibration()" />
+					<input type="button" value="Update Config File" />
+					<input type="button" style="display: block;" value="Back to Initial Plot" />
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
