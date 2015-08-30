@@ -1,16 +1,18 @@
 //Copy Calibration Coefficients for IN1002 here
-bsrscale=744.921596
-bsroffset=-2.773498
-bsgscale=386.037356
-bsgoffset=-2.584787
-bsbscale=376.834689
-bsboffset=-2.810157
-fsrscale=417.191418
-fsroffset=-31.436553
-fsgscale=215.475063
-fsgoffset=-33.646554
-fsbscale=193.076584
-fsboffset=-35.801119
+bsrscale=891.5424613454212 
+bsroffset=-24.55232784851306 
+bsgscale=452.6154076747443 
+bsgoffset=-20.40369547847821 
+bsbscale=423.0828473096689 
+bsboffset=-20.24496093860005 
+fsrscale=399.4556527678092 
+fsroffset=-84.83330809823902 
+fsgscale=225.3321014693197 
+fsgoffset=-89.409114285087 
+fsbscale=211.35528190534222 
+fsboffset=-85.02710063900282 
+
+
 //
 //Do Not Modify bellow this line.
 //Do Not Modify bellow this line.
@@ -41,8 +43,8 @@ uploading_config = false;
 
 default_config = 
 {
-	"aP" : 1.0,
-	"aT" : 1.0,
+	"aP" : 1.0,// 1.0
+	"aT" : 1.0, // 1.0
 	"aRH" : 1.0,
 	"aBR" : bsrscale/1000000,
 	"aFR" : fsrscale/1000000,
@@ -51,7 +53,7 @@ default_config =
 	"aBB" : bsbscale/1000000,
 	"aFB" : fsbscale/1000000,
 
-	"bP" : 0.0,
+	"bP" : 0.0, //0.0
 	"bT" : 0.0,
 	"bRH" : 0.0,
 	"bBR" : bsroffset/1000000,
